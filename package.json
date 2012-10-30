@@ -1,0 +1,8 @@
+{
+  "name": "chap6",
+  "version": "0.0.0",
+  "license": "BSD",
+  "scripts": {
+    "test": "mocha --watch --reporter spec --compilers coffee:coffee-script"
+  }
+}
