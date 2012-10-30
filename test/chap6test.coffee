@@ -73,11 +73,14 @@ describe 'SummaryAccount', ->
     summaryAccount.getBalance().should.equal 0.00
 
 describe 'PostingRule', ->
+
   it 'should post an entry to a memo account when posting to detail account', ->
     detailAccount = new chap6.Account()
     memoAccount = new chap6.Account()
     chap6.PostingRule.create detailAccount, (entry) ->
       (new chap6.Entry 0.45 * entry.amount, memoAccount).post()
+
     (new chap6.Entry 100.00, detailAccount).post()
+
     memoAccount.getBalance().should.equal 45.00
 
